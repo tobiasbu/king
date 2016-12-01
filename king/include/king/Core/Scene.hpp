@@ -3,7 +3,7 @@
 #ifndef KING_SCENE_HPP
 #define KING_SCENE_HPP
 
-#include <king\Entity\Object.hpp>
+#include <king\Core\Object.hpp>
 
 namespace king {
 

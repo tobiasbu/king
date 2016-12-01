@@ -9,6 +9,7 @@ namespace king {
 
 		switch (type)
 		{
+			default:
 			case Type::Step: return t < 0.5 ? 0 : 1;
 			case Type::Linear: return (float)t;
 			case Type::Sine: return Sine::in(t);

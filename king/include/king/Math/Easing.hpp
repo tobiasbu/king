@@ -9,7 +9,7 @@
 
 namespace king {
 
-	static class Easing {
+	class Easing {
 
 	public:
 

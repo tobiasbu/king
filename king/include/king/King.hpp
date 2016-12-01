@@ -10,6 +10,8 @@
 #include <king\Math\Random.hpp>
 #include <king\Math\Vector2.hpp>
 #include <king\Math\Vector3.hpp>
+#include <king\Math\Vector4.hpp>
+#include <king\Math\Matrix4.hpp>
 
 // Bases
 /*#include "Type.hpp"

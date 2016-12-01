@@ -1,5 +1,5 @@
 
-#include <king\Entity\Object.hpp>
+#include <king\Core\Object.hpp>
 //#include "Type.hpp"
 
 namespace king {

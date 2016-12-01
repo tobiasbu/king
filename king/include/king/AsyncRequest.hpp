@@ -3,6 +3,7 @@
 #ifndef KING_ASYNCREQUEST_HPP
 #define KING_ASYNCREQUEST_HPP
 
+#include <king/Core/Object.hpp>
 
 namespace king {
 
@@ -11,12 +12,14 @@ namespace king {
 	struct AsyncRequest {
 
 	private:
-		//AssetBase * asset;
-		bool loaded;
+
+		Object * _object;
+		bool _loaded;
 
 	public:
+
 		bool isReady();
-		//AssetBase * getAsset();
+		Object * get();
 
 	};
 

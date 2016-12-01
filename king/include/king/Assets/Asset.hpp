@@ -5,7 +5,7 @@
 
 #include <string>
 #include <king\Others\NonCopyable.hpp>
-#include <king\Entity\Object.hpp>
+#include <king\Core\Object.hpp>
 
 namespace king {
 

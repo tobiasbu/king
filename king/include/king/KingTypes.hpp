@@ -1,6 +1,7 @@
 
 
-
+#ifndef   KING_TYPES_HPP
+#define   KING_TYPES_HPP
 
 ////////////////////////////////////////////////////////////
 // Define portable fixed-size types
@@ -38,3 +39,5 @@ namespace king
 
 
 } // namespace king
+
+#endif
