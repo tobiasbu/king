@@ -15,11 +15,11 @@
 #include <king\Others\Singleton.hpp>
 #include <king\Others\NonCopyable.hpp>
 #include <king\Assets\ResourceManager.hpp>
-//#include <king\Others\Type.hpp>
+//#include <king\Type\TypeTraits.hpp>
 
 namespace king {
 
-	namespace adv {
+	namespace system {
 
 		class AssetManager : public Singleton<AssetManager>, NonCopyable {
 
@@ -68,18 +68,21 @@ namespace king {
 
 				auto found = _resources.find(str);*/
 
+				if (system::Type<T>::category() != TypeCategory::Class)
+					return false;
+
 				if (exists<T>())
 					return false;
 				else {
 
 					//ResourceManager<T> * manager = new ResourceManager<T>();
 
-					std::string str(TypeParseTraits<T>::name());
+					std::string str(system::Type<T>::name());
 
 					// remove namespace if have
-					size_t pos = str.find_last_of("::");
+					/*size_t pos = str.find_last_of("::");
 					if (pos != std::string::npos)
-						str = str.substr(pos + 1);
+						str = str.substr(pos + 1);*/
 
 					std::unique_ptr<ResourceManager<T> > manager(new ResourceManager<T>());
 
@@ -92,12 +95,12 @@ namespace king {
 			template<typename T>
 			bool unregistry() {
 
-				std::string str(TypeParseTraits<T>::name());
+				std::string str(system::Type<T>::name());
 
 				// remove namespace if have
-				size_t pos = str.find_last_of("::");
+				/*size_t pos = str.find_last_of("::");
 				if (pos != std::string::npos)
-					str = str.substr(pos + 1);
+					str = str.substr(pos + 1);*/
 
 				//std::cout << str << std::endl;
 
@@ -128,7 +131,7 @@ namespace king {
 			template<typename T>
 			bool exists()
 			{
-				const char * name = TypeParseTraits<T>::name();
+				const char * name = system::Type<T>::name();
 
 				if (name == nullptr)
 					return false;
@@ -146,13 +149,13 @@ namespace king {
 			ResourceManager<T> * getResourceManager() {
 
 
-				std::string str(TypeParseTraits<T>().name());
+				std::string str(system::Type<T>::name());
 
 
 				// remove namespace if have
-				size_t pos = str.find_last_of("::");
+				/*size_t pos = str.find_last_of("::");
 				if (pos != std::string::npos)
-					str = str.substr(pos + 1);
+					str = str.substr(pos + 1);*/
 
 				auto found = _resources.find(str);
 

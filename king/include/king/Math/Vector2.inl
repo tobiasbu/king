@@ -58,6 +58,14 @@ namespace king {
 		this->y = v.y;
 	}
 
+	 template <typename T>
+	 Vector2<T>::Vector2(T const & scalar) :
+		 x(scalar),
+		 y(scalar)
+	 {
+
+	 }
+
 	template <typename T>
 	 Vector2<T>::Vector2(T const & a, T const & b) :
 		x(a),
@@ -65,6 +73,24 @@ namespace king {
 	{
 
 	}
+
+	 ////////////////////////////////////////////////////////////
+	 // Conversion Constructors
+	 ////////////////////////////////////////////////////////////
+
+	 template <typename T>
+	 Vector2<T>::Vector2(const Vector3<T>& v)
+	 {
+		 this->x = v.x;
+		 this->y = v.y;
+	 }
+
+	 template <typename T>
+	 Vector2<T>::Vector2(const Vector4<T>& v) 
+	 {
+		 this->x = v.x;
+		 this->y = v.y;
+	 }
 
 	 ////////////////////////////////////////////////////////////
 	 // Explicit Conversion Constructors
@@ -81,10 +107,10 @@ namespace king {
 
 	template <typename T>
 	template <typename U>
-	 Vector2<T>::Vector2(const Vector2<U>& v) :
-		x(static_cast<T>(other.x)),
-		y(static_cast<T>(other.y)),
-		z(static_cast<T>(other.z))
+	Vector2<T>::Vector2(const Vector2<U>& v) :
+		x(static_cast<T>(v.x)),
+		y(static_cast<T>(v.y)),
+		z(static_cast<T>(v.z))
 	{
 
 	}

@@ -61,6 +61,15 @@ namespace king {
 		this->y = v.y;
 		this->z = v.z;
 	}
+	
+	template <typename T>
+	Vector3<T>::Vector3(T const & scalar) :
+		x(scalar),
+		y(scalar),
+		z(scalar)
+	{
+
+	}
 
 	template <typename T>
 	Vector3<T>::Vector3(T const & a, T const & b) :
@@ -312,7 +321,7 @@ namespace king {
 	template <typename T>
 	Vector3<T> operator/(Vector3<T> const & v, T scalar) {
 
-		return Vector3<T>(v1) /= scalar;
+		return Vector3<T>(v) /= scalar;
 
 	}
 

@@ -3,7 +3,7 @@
 #define KING_MATH_HPP
 
 #include <king\Math\Vector2.hpp>
-#include <king\KingTypes.hpp>
+#include <king\Type\Types.hpp>
 
 namespace king {
 

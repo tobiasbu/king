@@ -3,6 +3,8 @@
 
 namespace king {
 
+	
+
 	Scene::Scene() {
 
 		_isActive = false;

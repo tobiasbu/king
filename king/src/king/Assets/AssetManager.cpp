@@ -5,7 +5,7 @@
 
 namespace king {
 
-	namespace adv {
+	namespace system {
 
 		AssetManager::AssetManager() {
 

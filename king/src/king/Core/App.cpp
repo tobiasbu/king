@@ -1,14 +1,21 @@
 
 #include <king\Core\App.hpp>
-#include <king\System\Type.hpp>
+#include <king\Type\TypeTraits.hpp>
+#include <king\Type\String.hpp>
 #include <iostream>
 
 using namespace std;
 
 
+
 namespace king {
 
-	App::App() {
+		
+	
+
+	App::App() : _hierarchy(system::Hierarchy::getInstance()), render(system::RenderQueue::getInstance()) {
+
+		
 
 	}
 
@@ -31,6 +38,8 @@ namespace king {
 		_window = new sf::RenderWindow(sf::VideoMode(windowWidth, windowHeight), appName);
 
 		_window->clear();
+
+		
 
 		//Random::initialize();
 
@@ -89,11 +98,9 @@ namespace king {
 
 			}
 
-			_window->clear();
-			_window->setView(view);
-			//_window.draw(shape);
-			_window->draw(sprite);
-			_window->display();
+			onUpdate();
+
+			onRender();
 
 		}
 
@@ -104,14 +111,48 @@ namespace king {
 	// register sfml types and common types of king
 	void App::initializeTypes() {
 
-		TypeParseTraits<sf::Texture>::registerType();
-		TypeParseTraits<sf::Font>::registerType();
+		
 
+			//system::Type<bool>::reg();
+			/*system::Type<char>::reg();
+			system::Type<int>::reg();
+			system::Type<unsigned int>::reg();
+			system::Type<float>::reg();
+			system::Type<double>::reg();
+			system::Type<long>::reg();
+			system::Type<String>::reg("string");
+
+			system::Type<sf::Texture>::reg();
+			system::Type<sf::Font>::reg();*/
+
+
+			//cout <</* static_cast<int>(Type<sf::Texture>::category()) << " "*/ /*<< Type<sf::Texture>::namespaces() << " " <<*/ system::Type<int>::name() << endl;//static_cast<int>(Type<unsigned int>::type()) << endl;
+			//cout << system::Type<std::string>::name() << endl;
+		
 		// register assets managers
 		//_assets->registry<sf::Texture>();
 		//_assets->registry<sf::Font>();
 	//	assets.registry<sf::Texture>();
 	//	assets.registry<sf::Font>();
+
+	}
+
+	void App::onUpdate() {
+
+		_hierarchy.onUpdate();
+
+	}
+
+	void App::onRender() {
+
+		_window->clear();
+		//_window->setView(view);
+		//_window.draw(shape);
+
+		render.onRender();
+
+		//_window->draw(sprite);
+		_window->display();
 
 	}
 

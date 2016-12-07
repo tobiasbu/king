@@ -3,7 +3,7 @@
 #define   KING_MATRIX4_HPP
 
 #include <king/Math/Vector4.hpp>
-#include <king/KingTypes.hpp>
+#include <king/Type/Types.hpp>
 
 namespace king {
 

@@ -199,6 +199,8 @@ namespace king {
 
 				_currentScene = scene;
 
+				scene->start();
+
 				_stackActive.push_back(found->second);
 
 

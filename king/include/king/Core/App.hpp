@@ -4,6 +4,8 @@
 
 #include <king\Core\Time.hpp>
 #include <king\Core\SceneManager.hpp>
+#include <king\Core\Hierarchy.hpp>
+#include <king\Render\RenderQueue.hpp>
 /*#include "Random.hpp"
 #include "AssetManager.hpp"
 #include "ResourcesLoader.hpp"*/
@@ -22,10 +24,15 @@ namespace king {
 		void initializeTypes();
 
 		sf::RenderWindow * _window;
+		system::Hierarchy & _hierarchy;
 		
 		Time _time;
 		//adv::AssetManager * _assets;
 		//adv::ResourcesLoader * _res;
+
+		void onPreUpdate();
+		void onUpdate();
+		void onRender();
 
 	public:
 
@@ -36,6 +43,7 @@ namespace king {
 		void quit();
 		bool isRunning();
 		SceneManager scene;
+		system::RenderQueue & render;
 		
 
 	};

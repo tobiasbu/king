@@ -5,7 +5,7 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 
-#include <king\KingTypes.hpp>
+#include <king\Type\Types.hpp>
 #include <king\Math\Vector3.hpp>
 #include <string>
 

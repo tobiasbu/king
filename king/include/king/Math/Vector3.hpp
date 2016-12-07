@@ -30,6 +30,7 @@ namespace king {
 
 		Vector3();
 		Vector3(Vector3<T> const & v);
+		Vector3(T const & a);
 		Vector3(T const & a, T const & b);
 		Vector3(T const & a, T const & b, T const & c);
 

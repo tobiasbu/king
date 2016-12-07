@@ -23,7 +23,10 @@ namespace king {
 
 		Vector2();
 		Vector2(Vector2<T> const & v);
+		Vector2(T const & a);
 		Vector2(T const & a, T const & b);
+		Vector2(const Vector3<T>& v);
+		Vector2(const Vector4<T>& v);
 		
 		// Conversion Constructors
 
